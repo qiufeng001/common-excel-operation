@@ -1,0 +1,22 @@
+language: java
+sudo: false # faster builds
+
+jdk:
+  - oraclejdk8
+
+branches:
+  only:
+    - develop
+    - feature/*
+    - hotfix/*
+    - bugfix/*
+    - release/*
+    - support/*
+
+after_success:
+  bash <(curl -s https://codecov.io/bash)
+
+notifications:
+  email:
+    - xfslove@gmail.com
+    - chanjarster@gmail.com
